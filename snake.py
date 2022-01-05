@@ -259,17 +259,11 @@ while True:
             segments[0].x / BG_SQUARE_WIDTH), round(segments[0].y / BG_SQUARE_WIDTH)
         x_ratio_dif = segments[0].x - x_ratio * BG_SQUARE_WIDTH
         y_ratio_dif = segments[0].y - y_ratio * BG_SQUARE_WIDTH
-        # threshold = 13
 
         while ((segments[0].pixels_traveled_since_direction_change < BG_SQUARE_WIDTH
-                ) or (segments[0].x % BG_SQUARE_WIDTH != 0 or segments[0].y % BG_SQUARE_WIDTH != 0)):  # and (
-            # abs(x_ratio_dif) >= threshold or abs(y_ratio_dif) >= threshold):
+                ) or (segments[0].x % BG_SQUARE_WIDTH != 0 or segments[0].y % BG_SQUARE_WIDTH != 0)):
             tick()
 
-        # if we are just barely past the threshold, just artificially go forward or backwards a little bit
-        # if (abs(x_ratio_dif) < threshold and abs(y_ratio_dif) < threshold):
-        #     segments[0].x -= x_ratio_dif
-        #     segments[0].y -= y_ratio_dif
         segments[0].current_direction = new_direction
         segments[0].previous_direction = new_direction
         segments[0].pixels_traveled_since_direction_change = 0

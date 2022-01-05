@@ -1,8 +1,6 @@
 import pygame
 import os
 
-curved_img = pygame.image.load(os.path.join('assets', 'body_curved.png'))
-
 
 class Segment:
     def __init__(self, x, y, window, direction="east", width=40, vel=2, notSquare=False):
@@ -36,9 +34,6 @@ class Segment:
                 self.old_direction = self.current_direction
                 self.current_direction = prevSegment.old_direction
             sign = 1 if prevSegment.x - self.x > 0 else -1
-            # if prevSegment.x != prevSegment.old_x:
-            #     self.x += prevSegment.x - prevSegment.old_x
-            #     prevSegment.old_x = prevSegment.x - sign * self.velocity
             self.x += sign * self.velocity
 
         elif (prevSegment.current_direction == "east" or
@@ -47,25 +42,11 @@ class Segment:
                 self.old_direction = self.current_direction
                 self.current_direction = prevSegment.old_direction
             sign = 1 if prevSegment.y - self.y > 0 else -1
-            # if prevSegment.y != prevSegment.old_y:
-            #     self.y += prevSegment.y - prevSegment.old_y
-            #     prevSegment.old_y = prevSegment.y - sign * self.velocity
             self.y += sign * self.velocity
 
         else:
             self.old_direction = self.current_direction
             self.current_direction = prevSegment.current_direction
-
-    # def ensure_touching(self, prevSegment):
-    #     # if necessary, make sure we are touching the prev segment
-    #     if self.current_direction == "east" and prevSegment.x - self.x > self.width:
-    #         self.x += prevSegment.x - self.x - self.width
-    #     elif self.current_direction == "west" and self.x - prevSegment.x > self.width:
-    #         self.x += self.x - prevSegment.x - self.width
-    #     elif self.current_direction == "south" and prevSegment.y - self.y > self.width:
-    #         self.y += prevSegment.y - self.y - self.width
-    #     elif self.current_direction == "north" and self.y - prevSegment.y > self.width:
-    #         self.y += self.y - prevSegment.y - self.width
 
     def move(self, prevSegment):
         self.update_old_x_y()
@@ -81,18 +62,13 @@ class Segment:
 
             if self.current_direction == "east":
                 self.x += self.velocity
-                # self.x += prevSegment.x - self.x - self.width
             elif self.current_direction == "west":
                 self.x -= self.velocity
-                # self.x += prevSegment.x - self.x + self.width
             elif self.current_direction == "south":
                 self.y += self.velocity
-                # self.y += prevSegment.y - self.y - self.width
             else:
                 self.y -= self.velocity
-                # self.y += prevSegment.y - self.y + self.width
 
-        # self.ensure_touching(prevSegment)
         self.update_rect()
 
     def update_old_x_y(self):
