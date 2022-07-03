@@ -1,5 +1,5 @@
 # Snake Game
-This is my version of the classic snake game created using python's pygame. 
+This is my version of the classic snake game created using python's pygame. I have used custom royalty-free sound effects and have personally made all the visual art for this game. Please email me at 3069391@gmail.com or comment on this project page should you have any questions about the game, suggestions for further improvement, or have found any bugs.
 
 ## Screenshots
 ![image](https://user-images.githubusercontent.com/82241006/177054941-99c83e70-4f01-40eb-b39d-cb2d416b0fa5.png)
