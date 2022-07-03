@@ -16,5 +16,5 @@ This is my version of the classic snake game created using python's pygame. I ha
 3. Finally, run `python3 snake.py` in the project directory in order to start playing the game. Good luck!
 
 ## Objective and Controls
-In snake, you are supposed to eat the randomly spawned apples by moving into them with your snake's mouth. Every apple eaten will increase the size of your snake. Watch out though, because running into the edge of the screen or into part of your snake body will end the game. <br>
-You can change the direction your snake slithers in using the arrow keys. To quit out of the game, press the ESC key. Hav fun!
+In snake, you are supposed to eat the randomly spawned apples by moving into them with your snake's mouth. Every apple eaten will increase the length of your snake. Watch out though, because running into the edge of the screen or into part of your snake body will end the game. Try to see how long you can make your snake!<br>
+You can change the direction your snake slithers in using the arrow keys. To quit out of the game, press the ESC key. Have fun!
